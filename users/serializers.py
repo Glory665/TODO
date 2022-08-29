@@ -7,4 +7,4 @@ from  .models import TodoUser
 class TodoModelSerializer(ModelSerializer):
     class Meta:
         model = TodoUser
-        fields = '__all__'
+        fields = ('username', 'first_name', 'last_name', 'email')
