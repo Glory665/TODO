@@ -15,8 +15,8 @@ const ProjectItem = ({project}) => {
 }
 
 
-const ProjectList = ({project}) => {
-    console.log(project)
+const ProjectList = ({projects}) => {
+    console.log(projects)
     return (
         <table className="table">
             <tr>
@@ -25,7 +25,7 @@ const ProjectList = ({project}) => {
                 <th>repository</th>
                 <th>users</th>
             </tr>
-            {project.map((project) => <ProjectItem project={project} />)}
+            {projects.map((project) => <ProjectItem project={project} />)}
         </table>
     )
 }
