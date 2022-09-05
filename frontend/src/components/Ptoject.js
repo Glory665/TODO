@@ -16,7 +16,7 @@ const ProjectItem = ({project}) => {
 
 
 const ProjectList = ({projects}) => {
-    console.log(projects)
+
     return (
         <table className="table">
             <tr>

@@ -35,7 +35,7 @@ class App extends  React.Component{
 
        this.setState(
         {
-          'projects':response.data
+          'projects':response.data.results
         }
     )
     }).catch(error => console.log(error))
@@ -44,7 +44,7 @@ class App extends  React.Component{
 
        this.setState(
         {
-          'todos':response.data
+          'todos':response.data.results
         }
     )
     }).catch(error => console.log(error))

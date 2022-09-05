@@ -18,7 +18,7 @@ const ToDoItem = ({todo}) => {
 
 
 const ToDoList = ({todos}) => {
-    console.log(todos)
+
     return (
         <table className="table">
             <tr>
