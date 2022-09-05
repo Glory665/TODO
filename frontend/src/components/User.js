@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 
 
@@ -16,7 +16,7 @@ const UserItem = ({user}) => {
 
 
 const UserList = ({users}) => {
-
+    console.log(users)
     return (
         <table className="table">
             <tr>
@@ -25,7 +25,7 @@ const UserList = ({users}) => {
                 <th>Last Name</th>
                 <th>Email</th>
             </tr>
-            {users.map((user) => <UserItem user={user}/>)}
+            {users.map((user) => <UserItem user={user} />)}
         </table>
     )
 }

@@ -2,13 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import UserList from "./components/User";
+import ProjectList from "./components/Ptoject";
+import ToDoList from "./components/ToDo";
 import axios from "axios";
+import {HashRouter, Route} from "react-router-dom";
+
+
 
 class App extends  React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      'users': []
+      'users': [],
+      'projects': [],
+      'todos': []
     }
   }
 
@@ -22,20 +29,24 @@ class App extends  React.Component{
         }
     )
     }).catch(error => console.log(error))
-    // const users = [
-    //   {
-    //     'first_name':'Фёдор',
-    //     'last_name':'Достаевский',
-    //     'birthday_year':1821,
-    //   },
-    //   {
-    //     'first_name':'Александр',
-    //     'last_name':'Грин',
-    //     'birthday_year':1880,
-    //   }
-    //
-    // ]
 
+    axios.get('http://127.0.0.1:8000/api/projets/').then(response =>{
+
+       this.setState(
+        {
+          'projects':response.data
+        }
+    )
+    }).catch(error => console.log(error))
+
+  axios.get('http://127.0.0.1:8000/api/todos/').then(response =>{
+
+       this.setState(
+        {
+          'todos':response.data
+        }
+    )
+    }).catch(error => console.log(error))
   }
 
 
@@ -43,6 +54,8 @@ class App extends  React.Component{
     return (
       <div>
          <UserList users={this.state.users}/>
+         <ProjectList projets={this.state.projects}/>
+         <ToDoList todos={this.state.todos}/>
       </div>
     )
   }
