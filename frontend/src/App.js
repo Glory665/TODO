@@ -30,7 +30,7 @@ class App extends  React.Component{
     )
     }).catch(error => console.log(error))
 
-    axios.get('http://127.0.0.1:8000/api/projets/').then(response =>{
+    axios.get('http://127.0.0.1:8000/api/projeсt/').then(response =>{
 
        this.setState(
         {
@@ -39,7 +39,7 @@ class App extends  React.Component{
     )
     }).catch(error => console.log(error))
 
-  axios.get('http://127.0.0.1:8000/api/todos/').then(response =>{
+  axios.get('http://127.0.0.1:8000/api/todo/').then(response =>{
 
        this.setState(
         {
@@ -53,9 +53,11 @@ class App extends  React.Component{
   render() {
     return (
       <div>
-         <UserList users={this.state.users}/>
-         <ProjectList projets={this.state.projects}/>
-         <ToDoList todos={this.state.todos}/>
+          <HashRouter>
+              <Route exact path='/' component={() => <UserList users={this.state.users}/>} />
+              <Route exact path='/projects' component={() => <ProjectList project={this.state.projects}/>} />
+              <Route exact path='/todos' component={() => <ToDoList todo={this.state.todos}/>} />
+          </HashRouter>
       </div>
     )
   }

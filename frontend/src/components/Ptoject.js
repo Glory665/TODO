@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 
 
@@ -15,8 +15,8 @@ const ProjectItem = ({project}) => {
 }
 
 
-const ProjectList = ({projects}) => {
-    console.log(projects)
+const ProjectList = ({project}) => {
+    console.log(project)
     return (
         <table className="table">
             <tr>
@@ -25,7 +25,7 @@ const ProjectList = ({projects}) => {
                 <th>repository</th>
                 <th>users</th>
             </tr>
-            {projects.map((project) => <ProjectItem project={project} />)}
+            {project.map((project) => <ProjectItem project={project} />)}
         </table>
     )
 }
