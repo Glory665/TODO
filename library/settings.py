@@ -134,7 +134,7 @@ AUTH_USER_MODEL = 'users.TodoUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissions'
+       'rest_framework.permissions.DjangoModelPermissions'
     ],
 
     'DEFAULT_RENDERER_CLASSES': (

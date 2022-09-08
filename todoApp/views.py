@@ -1,5 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import status
+from rest_framework import status, permissions
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
@@ -13,6 +13,7 @@ class ProjectPagination(PageNumberPagination):
 
 
 class ProjectViewSet(ModelViewSet):
+    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()
     pagination_class = ProjectPagination
@@ -30,6 +31,7 @@ class ToDoPagination(PageNumberPagination):
 
 
 class ToDoViewSet(ModelViewSet):
+    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = ToDoSerializer
     queryset = ToDo.objects.all()
     pagination_class = ToDoPagination
