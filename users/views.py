@@ -7,6 +7,6 @@ from .serializers import TodoModelSerializer
 
 class TodoModelViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                        mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = TodoUser.objects.all()
     serializer_class = TodoModelSerializer

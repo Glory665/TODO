@@ -40,12 +40,12 @@ class App extends  React.Component{
   get_token_from_storage(){
       const cookies = new Cookies()
       const token = cookies.get('token')
-      this.setState({'token': token}, ()=>this.load_data())
+      this.setState({'token':token}, ()=>this.load_data())
   }
 
 
-  get_token(username,password){
-      const data = {username:username,password:password}
+  get_token(username, password){
+      const data = {username:username, password:password}
       axios.post('http://127.0.0.1:8000/api-token-auth/',data).then(response => {
           this.set_token(response.data['token'])
       }).catch(error => alert('Неверный логин или пароль'))
