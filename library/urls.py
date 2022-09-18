@@ -19,6 +19,7 @@ from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
 from todoApp.views import ToDoViewSet, ProjectViewSet
+from userapp.views import UserListAPIView
 
 from users.views import TodoModelViewSet
 
@@ -33,4 +34,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('api-token-auth/', views.obtain_auth_token),
+
+    path('api/userapp/v1', include('userapp.urls', namespace='v1')),
+    path('api/userapp/v2', include('userapp.urls', namespace='v2')),
 ]

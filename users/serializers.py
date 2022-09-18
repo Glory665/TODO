@@ -1,7 +1,7 @@
-from rest_framework.serializers import HyperlinkedModelSerializer,ModelSerializer
+from rest_framework.serializers import HyperlinkedModelSerializer, ModelSerializer
 
 
-from  .models import TodoUser
+from .models import TodoUser
 
 
 class TodoModelSerializer(ModelSerializer):
