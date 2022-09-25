@@ -38,7 +38,7 @@ class App extends  React.Component{
 
   delete_Todo(todo){
       const headers = this.get_headers()
-      axios.delete(`http://127.0.0.1:8000/api/todo/${id}`, {headers})
+      axios.delete(`http://127.0.0.1:8000/api/todo/${todo.id}`, {headers})
         .then(response => {
           this.load_data()
         }).catch(error => {
@@ -129,7 +129,7 @@ class App extends  React.Component{
 
   create_Todo(name, project, text_note, created_user) {
     let headers = this.get_headers()
-    axios.post(`http://127.0.0.1:8000/api/todos`, { 'id': id, 'text': text, 'created_user': created_user, 'created_date': new Date() }, { headers })
+    axios.post(`http://127.0.0.1:8000/api/todos`, { 'name': name, 'project': project, 'text_note': text_note, 'created_user': created_user, 'created_date': new Date() }, { headers })
       .then(response => {
         this.load_data()
       }).catch(error => console.log(error))
